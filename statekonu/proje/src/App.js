@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={handleclick}>Kurs Ekle</button>
-      <div>{courseList}</div>
+      <div className="courselist">{courseList}</div>
     </div>
   );
 }

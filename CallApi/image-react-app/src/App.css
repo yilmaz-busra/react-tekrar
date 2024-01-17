@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  margin: 10px;
+}
+/* Header CSS */
+.headerdiv {
+  margin: 10px;
+}
+.form-css {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.form-css > input {
+  width: 100%;
+}
+
+.imageList {
+  columns: 250px 5;
+  column-gap: 10px;
+}
+.imageListImg {
+  width: 100%;
+  margin-bottom: 10px;
+}

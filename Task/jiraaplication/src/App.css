@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-create {
+  width: 450px;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+}
+.task-label {
+}

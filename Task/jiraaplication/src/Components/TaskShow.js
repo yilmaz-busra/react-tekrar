@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TaskCreate from "./TaskCreate";
 
-function TaskShow({ task, onDelete }) {
+function TaskShow({ task, onDelete, onUpdate }) {
   console.log(task);
   const [showEdit, setShowEdit] = useState();
 
@@ -11,10 +11,14 @@ function TaskShow({ task, onDelete }) {
   const handleEditClick = () => {
     setShowEdit(true);
   };
+  const handleSubmit = (id, updatedTitle, updatedTaskDesc) => {
+    setShowEdit(false);
+    onUpdate(id, updatedTitle, updatedTaskDesc);
+  };
   return (
     <div className="task-show">
       {showEdit ? (
-        <TaskCreate task={task} taskformUpdate={true} />
+        <TaskCreate task={task} taskformUpdate={true} onUpdate={handleSubmit} />
       ) : (
         <div>
           <h3 className="task-title">Göreviniz</h3>

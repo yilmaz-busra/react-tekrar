@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TaskCreate({ onCreate, task, taskformUpdate }) {
+function TaskCreate({ onCreate, task, taskformUpdate, onUpdate }) {
   const [title, setTitle] = useState(task ? task.title : "");
   const [taskDesc, setTaskDesc] = useState(task ? task.taskDesc : "");
 
@@ -14,7 +14,12 @@ function TaskCreate({ onCreate, task, taskformUpdate }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onCreate(title, taskDesc);
+    if (taskformUpdate) {
+      onUpdate(task.id, title, taskDesc);
+    } else {
+      onCreate(title, taskDesc);
+    }
+
     setTitle("");
     setTaskDesc("");
   };

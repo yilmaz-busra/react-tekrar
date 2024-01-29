@@ -34,7 +34,23 @@ function App() {
       {loading ? (
         <Loading />
       ) : (
-        <Courses courses={courses} removeCourse={deleteCourse} />
+        <>
+          {courses.length === 0 ? (
+            <div className="refreshDiv">
+              <h2>Kurslarin hepsini sildin!</h2>
+              <button
+                className="cardDeleteBtn"
+                onClick={() => {
+                  fetchCourses();
+                }}
+              >
+                Yenile
+              </button>
+            </div>
+          ) : (
+            <Courses courses={courses} removeCourse={deleteCourse} />
+          )}
+        </>
       )}
     </div>
   );

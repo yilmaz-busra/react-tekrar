@@ -18,6 +18,16 @@ function Courses({ courses, removeCourse }) {
     }
     return index;
   };
+
+  const getRandomCourse = () => {
+    //0 ile 5(courses) arasında değer döndürür tabana yuvarlamak(Math.floor) için hepsi parantez
+    let randomNumber = Math.floor(Math.random() * courses.length);
+    if (randomNumber === index) {
+      randomNumber = index + 1;
+    }
+    //ayni eleman gelmemesi icin
+    setIndex(checkIndex(randomNumber));
+  };
   const prevCourse = () => {
     setIndex((index) => {
       let newIndex = index - 1;
@@ -32,8 +42,11 @@ function Courses({ courses, removeCourse }) {
   };
   return (
     <div className="courseMainDiv">
-      <div>
+      <div className="courseTitleAndBtn">
         <h2>Kurslarım</h2>
+        <button className="cardDeleteBtn" onClick={getRandomCourse}>
+          Rastgele Kurs Ata
+        </button>
       </div>
 
       <div className="cardDiv">

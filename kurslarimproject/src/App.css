@@ -31,7 +31,7 @@
   color: aliceblue;
 }
 .cardDeleteBtn {
-  width: 100px;
+  width: 200px;
   padding: 10px;
   border-radius: 30px;
   border: none;
@@ -47,4 +47,9 @@
   background-color: white;
   font-size: 20px;
   color: red;
+}
+
+.courseTitleAndBtn {
+  text-align: center;
+  margin-bottom: 20px;
 }

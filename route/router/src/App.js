@@ -5,6 +5,9 @@ import AboutUs from "./Components/AboutUs";
 import Navbar from "./Components/Navbar";
 import Mission from "./Components/Mission";
 import WrongPath from "./Components/WrongPath";
+import History from "./Components/History";
+import Company from "./Components/Company";
+import Team from "./Components/Team";
 
 function App() {
   return (
@@ -17,6 +20,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/mission" element={<Mission />} />
+        <Route path="/history" element={<History />}>
+          {/* ic ice route yazimi */}
+          <Route path="company" element={<Company />} />
+          <Route path="team" element={<Team />} />
+        </Route>
+
         <Route path="*" element={<WrongPath />} />
       </Routes>
     </div>

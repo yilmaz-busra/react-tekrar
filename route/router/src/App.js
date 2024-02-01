@@ -1,4 +1,5 @@
 import "./App.css";
+
 import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
@@ -10,7 +11,9 @@ import Company from "./Components/Company";
 import Team from "./Components/Team";
 import Members from "./Components/Members";
 import MemberDetail from "./Components/MemberDetail";
+import React from "react";
 
+const LazyAboutUs = React.lazy(() => import("./Components/AboutUs"));
 function App() {
   return (
     <div className="App">
@@ -20,7 +23,15 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
+        {/* <Route path="/aboutUs" element={<AboutUs />} /> */}
+        <Route
+          path="/aboutUs"
+          element={
+            <React.Suspense>
+              <LazyAboutUs />
+            </React.Suspense>
+          }
+        />
         <Route path="/mission" element={<Mission />} />
         <Route path="/history" element={<History />}>
           {/* ic ice route yazimi */}

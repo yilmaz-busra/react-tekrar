@@ -8,3 +8,8 @@ nav a {
   text-decoration: none;
   margin-right: 20px;
 }
+
+nav a.active {
+  font-weight: bold;
+  font-size: 20px;
+}

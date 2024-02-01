@@ -3,12 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="mainNav">
       {/* <Link to={"/"}>Home</Link>
       <Link to={"/aboutUs"}>About</Link> */}
 
       <NavLink to={"/"}>Home</NavLink>
       <NavLink to={"/aboutUs"}>About</NavLink>
+      <NavLink to={"/history"}>History</NavLink>
     </nav>
   );
 }

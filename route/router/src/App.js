@@ -4,6 +4,7 @@ import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import Navbar from "./Components/Navbar";
 import Mission from "./Components/Mission";
+import WrongPath from "./Components/WrongPath";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/mission" element={<Mission />} />
+        <Route path="*" element={<WrongPath />} />
       </Routes>
     </div>
   );

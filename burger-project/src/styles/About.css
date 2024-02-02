@@ -1,0 +1,21 @@
+.about {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 20px;
+  margin-bottom: 150px;
+}
+
+.aboutBottom {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+.aboutBottom p {
+  width: 1200px;
+}

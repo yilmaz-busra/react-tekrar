@@ -6,6 +6,7 @@ import Contact from "../../burger-project/src/Components/Contact";
 import Menu from "./Components/Menu";
 import About from "./Components/About";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

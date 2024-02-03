@@ -1,0 +1,54 @@
+.contact {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+}
+
+.contact .leftSide {
+  height: 100%;
+  flex: 50% 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contact .rightSide {
+  height: 100%;
+  flex: 50% 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rightSide h1 {
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  padding: 30px;
+}
+form input {
+  height: 40px;
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #121619;
+  color: black;
+}
+form label {
+  margin-top: 15px;
+  color: gray;
+}
+
+form button {
+  margin-top: 40px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  background-color: brown;
+  color: whitesmoke;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 30px;
+}

@@ -1,7 +1,9 @@
 import React from "react";
 import { Formik, useFormik } from "formik";
+import { basicSchema } from "../schemass";
 
 function GeneralForm() {
+  const onSubmit = () => {};
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
@@ -9,10 +11,12 @@ function GeneralForm() {
       password: "",
       confirmPassword: "",
     },
+    validationSchema: basicSchema,
+    onSubmit,
   });
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="inputDiv">
         <label>Mail Adresinizi Girin</label>
         <input
@@ -57,6 +61,7 @@ function GeneralForm() {
           placeholder="Şifreyi Tekrar Girin"
         />
       </div>
+      <button type="submit">Kaydet</button>
     </form>
   );
 }

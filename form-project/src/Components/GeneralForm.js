@@ -3,17 +3,26 @@ import { Formik, useFormik } from "formik";
 import { basicSchema } from "../schemass";
 
 function GeneralForm() {
-  const onSubmit = () => {};
-  const { values, errors, handleChange, handleSubmit } = useFormik({
-    initialValues: {
-      email: "",
-      age: "",
-      password: "",
-      confirmPassword: "",
-    },
-    validationSchema: basicSchema,
-    onSubmit,
-  });
+  const onSubmit = async (values, actions) => {
+    console.log(values);
+    console.log(actions);
+
+    await new Promise((resolve) => {
+      setTimeout(resolve, 1000);
+    });
+    actions.resetForm();
+  };
+  const { values, errors, isSubmitting, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        email: "",
+        age: "",
+        password: "",
+        confirmPassword: "",
+      },
+      validationSchema: basicSchema,
+      onSubmit,
+    });
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,7 +34,9 @@ function GeneralForm() {
           onChange={handleChange}
           id="email"
           placeholder="Mailinizi Girin"
+          className={errors.email ? "input-error" : ""}
         />
+        {errors.email && <p className="error">{errors.email}</p>}
       </div>
 
       <div className="inputDiv">
@@ -36,7 +47,9 @@ function GeneralForm() {
           onChange={handleChange}
           id="age"
           placeholder="Yaşınızı Girin"
+          className={errors.age ? "input-error" : ""}
         />
+        {errors.age && <p className="error">{errors.age}</p>}
       </div>
 
       <div className="inputDiv">
@@ -47,6 +60,7 @@ function GeneralForm() {
           onChange={handleChange}
           id="password"
           placeholder="Şifrenizi Girin"
+          className={errors.password ? "input-error" : ""}
         />
       </div>
 
@@ -59,9 +73,15 @@ function GeneralForm() {
           onChange={handleChange}
           id="confirmPassword"
           placeholder="Şifreyi Tekrar Girin"
+          className={errors.confirmPassword ? "input-error" : ""}
         />
+        {errors.confirmPassword && (
+          <p className="error">{errors.confirmPassword}</p>
+        )}
       </div>
-      <button type="submit">Kaydet</button>
+      <button disabled={isSubmitting} type="submit">
+        Kaydet
+      </button>
     </form>
   );
 }

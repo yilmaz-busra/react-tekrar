@@ -8,12 +8,14 @@ function CustomCheckBox({ label, ...props }) {
 
   return (
     <>
-      <label>{label}</label>
-      <input
-        {...field}
-        {...props}
-        className={meta.error ? "input-error" : ""}
-      />
+      <div className="checkbox">
+        <input
+          {...field}
+          {...props}
+          className={meta.error ? "input-error" : ""}
+        />
+        <span>Kullanım Koşullarını kabul ediyorum</span>
+      </div>
       {meta.error && <div className="error">{meta.error}</div>}
     </>
   );

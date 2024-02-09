@@ -4,6 +4,8 @@ import CustomInput from "./CustomInput";
 import { Form, Formik } from "formik";
 import { advancedSchema } from "../schemass";
 import CustomSelect from "./CustomSelect";
+import CustomCheckBox from "./CustomCheckBox";
+import { Link } from "react-router-dom";
 
 function PortalForm() {
   const onSubmit = async (values, actions) => {
@@ -26,7 +28,7 @@ function PortalForm() {
         onSubmit={onSubmit}
         validationSchema={advancedSchema}
       >
-        {() => (
+        {({ isSubmitting }) => (
           <Form>
             <CustomInput
               label="Kullanıcı Adı"
@@ -46,6 +48,13 @@ function PortalForm() {
               <option value="ytü">Yıldız Teknik Üniversitesi</option>
               <option value="odtü">ODTÜ</option>
             </CustomSelect>
+            <CustomCheckBox type="checkbox" name="isAccepted" />
+            <button disabled={isSubmitting} type="submit">
+              Kaydet
+            </button>
+            <Link className="formLink" to={"/"}>
+              Ana Forma git
+            </Link>
           </Form>
         )}
       </Formik>

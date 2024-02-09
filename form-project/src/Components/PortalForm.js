@@ -1,5 +1,8 @@
 import React from "react";
-import { Form, Formik, Field } from "react-router-dom";
+import {} from "react-router-dom";
+import CustomInput from "./CustomInput";
+import { Form, Formik } from "formik";
+import { advancedSchema } from "../schemass";
 
 function PortalForm() {
   const onSubmit = async (values, actions) => {
@@ -20,8 +23,18 @@ function PortalForm() {
           isAccepted: false,
         }}
         onSubmit={onSubmit}
+        validationSchema={advancedSchema}
       >
-        {() => <Form></Form>}
+        {() => (
+          <Form>
+            <CustomInput
+              label="Kullanıcı Adı"
+              name="userName"
+              type="text"
+              placeholder="Kullanici Adinizi Girin"
+            />
+          </Form>
+        )}
       </Formik>
     </>
   );
